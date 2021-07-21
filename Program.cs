@@ -1,6 +1,7 @@
 ﻿using GitLocalChangePullDemo;
 
 using System;
+using System.Diagnostics;
 
 namespace GirCore
 {
@@ -9,12 +10,19 @@ namespace GirCore
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Console.WriteLine("walterlv's automatic git command");
+            string gitCommand = @"C:\Program Files\Git\cmd\git.exe";
+            string gitAddArgument = "add -A";
+            string commitMessage = "My 1sttt commit message";
+            string gitCommitArgument = String.Format("commit -a -m \"{0}\"", commitMessage);
+            string gitPushArgument = "push";
 
-            var git = new CommandRunner("git", @"C:\Users\ReshamP\Desktop\GitLocalChangePullDemo");
-            var status = git.Run("add .");
+            Process.Start(gitCommand, gitAddArgument); // Runs: git add -A
+            Process.Start(gitCommand, gitCommitArgument); // Runs: git commit -a -m "Your commit message"
+            Process.Start(gitCommand, gitPushArgument); // Runs: git push
+            //var git = new CommandRunner("https://github.com/reshampitale/reshampitale.git", @"https://github.com/reshampitale/reshampitale.git");
+            //var status = git.Run("remote add");
 
-            Console.WriteLine(status);
+            //Console.WriteLine(status);
             Console.WriteLine("Exit the program by Enter... ");
 
 
