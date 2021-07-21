@@ -11,11 +11,17 @@ namespace GirCore
         {
             Console.WriteLine("Hello World!");
             string gitCommand = @"C:\Program Files\Git\cmd\git.exe";
-            string gitAddArgument = "add -A";
-            string commitMessage = "My 3rd commit message";
-            string gitCommitArgument = String.Format("commit -a -m \"{0}\"", commitMessage);
+            // string gitAddArgument = "add -A";
+            //string commitMessage = "My 3rd commit message";
+            Console.Write("Enter Remote Repository Branch path: ");
+            string strAddArgument = Console.ReadLine();
+            string gitAddArgument = String.Format("git remote add origin \"{0}\"", strAddArgument);
+            Console.Write("Enter Commit Comment: ");
+            string strCommitComment = Console.ReadLine();
+            string gitCommitArgument = String.Format("commit -a -m \"{0}\"", strCommitComment);
             string gitPushArgument = "push";
-
+           
+           
 
 
             Process.Start(gitCommand, gitAddArgument); // Runs: git add -A
