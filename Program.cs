@@ -15,7 +15,7 @@ namespace GirCore
             //string commitMessage = "My 3rd commit message";
             Console.Write("Enter Remote Repository Branch path: ");
             string strAddArgument = Console.ReadLine();
-            string gitAddArgument = String.Format("git remote add origin \"{0}\"", strAddArgument);
+            string gitAddArgument = String.Format("remote add origin \"{0}\"", strAddArgument);
             Console.Write("Enter Commit Comment: ");
             string strCommitComment = Console.ReadLine();
             string gitCommitArgument = String.Format("commit -a -m \"{0}\"", strCommitComment);
